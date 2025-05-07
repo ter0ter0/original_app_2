@@ -18,6 +18,13 @@
             <div class="container">
                 <p>このサイトはあなたのビジョンをお手伝いするサイトです</p>
             </div>
+            <div class="scroll-container">
+                <div class="scroll-content">
+                    @foreach(range(1,10) as $i)
+                        <img src="/images/図1.jpg" alt="door{{$i}}">
+                    @endforeach
+                </div>
+            </div>
         </main>
 
         @include('commons.footer')

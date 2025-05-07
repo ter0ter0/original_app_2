@@ -4,9 +4,20 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-image: url('/images/ChatGPT Image 2025年5月7日 14_35_05.png');
-  background-size: 50%;
+  background-size: 70%;
   background-position: center;
+}
+
+.scroll-container {
+  overflow-x: auto;     /* 横スクロールを有効化 */
+  white-space: nowrap;  /* コンテンツを横一列に並べる */
+  width: 100%;          /* コンテナの幅を画面いっぱいに */
+}
+
+.scroll-content img {
+  height: 400px;        /* ドア画像の高さを調整 */
+  margin-right: 100px;   /* 画像間のスペース */
+  display: inline-block;/* 横並びにする */
 }
 
 main {
