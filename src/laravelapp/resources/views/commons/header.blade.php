@@ -1,7 +1,7 @@
 <header>
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Note</a>
+    <a class="navbar-brand fs-3" href="#">Note</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -28,14 +28,24 @@
           <a class="nav-link disabled">Disabled</a>
         </li>
       </ul>
-
     <ul class="navbar-nav mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">ログイン</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">新規登録</a>
-        </li>
+        @if(Auth::check())
+            <li class="nav-item">
+            <form method="POST" action="{{ route('logout') }}" class="d-inline">
+                @csrf
+                <button type="submit" class="nav-link btn btn-link text-secondary">
+                    ログアウト
+                </button>
+            </form>
+            </li>
+        @else
+            <li class="nav-item">
+            <a class="nav-link" href="{{ route('login') }}">ログイン</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="{{ route('register') }}">新規登録</a>
+            </li>
+        @endif
     </ul>
     <form class="d-flex" style="max-width: 300px;" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
