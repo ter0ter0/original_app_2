@@ -16,7 +16,7 @@ body {
 
 .scroll-content img {
   height: 400px;        /* ドア画像の高さを調整 */
-  margin-right: 100px;   /* 画像間のスペース */
+  margin-right: 0px;   /* 画像間のスペース */
   display: inline-block;/* 横並びにする */
 }
 
@@ -29,6 +29,7 @@ footer {
   color: black;
   padding: 1rem;
   text-align: center;
+  margin-top: 0;
 }
 
 nav a {
@@ -45,4 +46,13 @@ nav a {
 
 section {
   margin-bottom: 2rem;
+}
+
+.image {
+  background-image: url("/images/door2.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 400px;
+  height: 450px;  /* 画面高さ */
 }

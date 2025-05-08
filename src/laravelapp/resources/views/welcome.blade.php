@@ -12,19 +12,35 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
 </head>
 <body>
+        @if(session('alertMessage'))
+            <div class="alert alert-danger text-center w-75 mx-auto">
+                {{ session('alertMessage') }}
+            </div>
+        @elseif(session('successMessage'))
+            <div class="alert alert-success text-center w-75 mx-auto">
+                {{ session('successMessage') }}
+            </div>
+        @endif
+
         @include('commons.header')
 
         <main>
             <div class="container">
                 <p>このサイトはあなたのビジョンをお手伝いするサイトです</p>
             </div>
-            <div class="scroll-container">
-                <div class="scroll-content">
-                    @foreach(range(1,10) as $i)
-                        <img src="/images/図1.jpg" alt="door{{$i}}">
-                    @endforeach
+            @if(Auth::check())
+                <div class="scroll-container">
+                    <div class="scroll-content">
+                        @foreach(range(1,10) as $i)
+                            <img src="/images/door2.jpg" alt="door{{$i}}">
+                        @endforeach
+                    </div>
                 </div>
-            </div>
+            @else
+                <div class="d-flex justify-content-center align-items-center">
+                    <div class="image"></div>
+                </div>
+            @endif
         </main>
 
         @include('commons.footer')
