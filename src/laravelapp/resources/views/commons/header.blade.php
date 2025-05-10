@@ -27,6 +27,14 @@
         <li class="nav-item">
           <a class="nav-link disabled">Disabled</a>
         </li>
+        @if(Auth::check())
+                <!-- Logo -->
+            <div class="shrink-0 flex items-center">
+                <a href="{{ route('dashboard') }}">
+                    <x-application-logo class="block h-9 w-auto fill-current text-gray-800" />
+                </a>
+            </div>
+        @endif
       </ul>
     <ul class="navbar-nav mb-2 mb-lg-0">
         @if(Auth::check())
